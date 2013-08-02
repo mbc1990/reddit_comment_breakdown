@@ -6,7 +6,7 @@ _reddit = None
 def get_comment_history(username):
     user = _reddit.get_redditor(username)
     subs = {}
-    com = user.get_comments(limit=10)
+    com = user.get_comments(limit=1000)
     for c in com:
         if c.subreddit.display_name not in subs:
             subs[c.subreddit.display_name] = 0
