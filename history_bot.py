@@ -32,7 +32,7 @@ def post_comment(url, limit):
         sublist += '\n\n'+k+": "+str(float(hist[2][k]) / float(hist[1]) * 100)[:4]+"%"
         count += 1
 
-    resp = "This from someone whose comment history is:"+sublist
+    resp = str(author)+"'s posting history:"+sublist
     comment.reply(resp)
     print resp
     
@@ -50,5 +50,5 @@ if __name__ == "__main__":
         get_comment_history(uname)
     elif sys.argv[1] == '-p':
         url = sys.argv[2]
-        limit = sys.argv[3]
+        limit = int(sys.argv[3])
         post_comment(url,limit)
